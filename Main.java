@@ -125,18 +125,14 @@ public class Main {
             Resultados r = new Resultados();
             r.ordenaResultados(resultados);
             double[] erros = new double[n];
+            double media = 0;
             for (i = 0; i < n; i++) {
                 //System.out.println("Resultado [" + i +  "] " + resultados.get(i).erroTeste);
                 erros[i] += resultados.get(i).erroTeste;
+                media += erros[i];
                 //System.out.println("Erros [" + i +  "] " + erros[i]);
             }
 
-            double media = 0;
-            for (i = 0; i < n; i++) {
-                //System.out.println(resultados.get(i).erroTeste);
-                //System.out.println("Média: " + media);
-                media += erros[i];
-            }
             media = media / n;
             Double desvioPadrao = new Double(0);
 
